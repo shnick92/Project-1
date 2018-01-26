@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<canvas id="myChart" width="400" height="400"></canvas>
+	<div id="news"></div>
+	
+</body>
+</html>
+<script>
+
+var currencyURL = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,XRP,BCH,LTC&tsyms=USD";
+
+$.ajax({
+        url: currencyURL,
+        method: "GET"
+        })
+        .then(function(response) {
+        var BTC = response.BTC.USD
+        var ETH = response.ETH.USD
+        var XRP = response.XRP.USD
+        var BCH = response.BCH.USD
+        var LTC = response.LTC.USD
+        console.log(BTC);
+        console.log(ETH);
+        console.log(XRP);
+        console.log(BCH);
+        console.log(LTC);
+
+          
+        console.log(response);
+
+	var ctx = $("#myChart");
+	var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["BTC", "ETH", "XRP", "BCH", "LTC"],
+        datasets: [{
+            label: "Price (USD)",
+            data: [BTC, ETH, XRP, BCH, LTC],
+            backgroundColor: [
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(54, 162, 235, 0.2)'
+            ],
+            borderColor: [
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+	});
+</script>
