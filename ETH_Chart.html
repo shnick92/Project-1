@@ -23,10 +23,10 @@
 var EthCoinURL = "https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&extraParams=CryptoCompare&fsym=ETH&limit=3&tryConversion=false&tsym=USD"
 
 $.ajax({
-    url: EthCoinURL,
-    method: "GET"
-    })
-    .then(function(response) {
+  url: EthCoinURL,
+  method: "GET"
+  })
+  .then(function(response) {
     var twoDaysAgo = response.Data[0].close;
     var oneDayAgo = response.Data[1].close;
     var current = response.Data[3].close;
@@ -36,32 +36,28 @@ $.ajax({
 	var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ["two days ago", "one days ago", "current price"],
-        datasets: [{
-            label: "Price (USD) of one ETH", 
-            fill: false,
-            data: [twoDaysAgo, oneDayAgo, current],
-            backgroundColor: [
-                 'rgba(54, 162, 235, 0.2)'
-             ],
-             borderColor: [
-                 'rgba(54, 162, 235, 1)',
-                 'rgba(54, 162, 235, 1)',
-                 'rgba(54, 162, 235, 1)',
-                 'rgba(54, 162, 235, 1)',
-                 'rgba(54, 162, 235, 1)'
-             ],
+      labels: ["two days ago", "one days ago", "current price"],
+      datasets: [{
+      label: "Price (USD) of one ETH", 
+      fill: false,
+      data: [twoDaysAgo, oneDayAgo, current],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)'
+      ],
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero:true
+          }
         }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
+      }
     }
+  });
 });
-	});
 </script>
