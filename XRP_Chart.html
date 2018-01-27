@@ -7,21 +7,20 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="chartBTC">
-	   <canvas id="myChart" width="400" height="400"></canvas>
+	<div id="chartXRP">
+       <canvas id="myChart" width="400" height="400"></canvas>
     </div>
     <style>
-    #chartBTC {
+    #chartXRP {
       width: 60%;
       height: 50%;
     } 
-    </style>
-	
+    </style>	
 </body>
 </html>
 <script>
 
-var currency = "BTC";
+var currency = "XRP";
 var currencyCoinURL = "https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&extraParams=CryptoCompare&fsym=" + currency + "&limit=3&tryConversion=false&tsym=USD";
 
 $.ajax({
@@ -40,22 +39,22 @@ $.ajax({
     data: {
       labels: ["two days ago", "one days ago", "current price"],
       datasets: [{
-        label: "Price (USD) of one Bitcoin", 
-        fill: false,
-        data: [twoDaysAgo, oneDayAgo, current],
-        backgroundColor: [
-          'rgba(54, 162, 235, 0.2)'
-        ],
-        borderColor: [
-          'rgba(54, 162, 235, 1)'
-        ],
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero:true
+      label: "Price (USD) of one XRP", 
+      fill: false,
+      data: [twoDaysAgo, oneDayAgo, current],
+      backgroundColor: [
+        'rgba(54, 162, 235, 0.2)'
+      ],
+      borderColor: [
+        'rgba(54, 162, 235, 1)'
+      ],
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero:true
           }
         }]
       }

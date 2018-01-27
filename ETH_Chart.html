@@ -20,10 +20,11 @@
 </html>
 <script>
 
-var EthCoinURL = "https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&extraParams=CryptoCompare&fsym=ETH&limit=3&tryConversion=false&tsym=USD"
+var currency = "ETH";
+var currencyCoinURL = "https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&extraParams=CryptoCompare&fsym=" + currency + "&limit=3&tryConversion=false&tsym=USD";
 
 $.ajax({
-  url: EthCoinURL,
+  url: currencyCoinURL,
   method: "GET"
   })
   .then(function(response) {
