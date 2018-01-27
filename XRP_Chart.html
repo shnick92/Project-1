@@ -22,6 +22,7 @@
 
 var currency = "XRP";
 var currencyCoinURL = "https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&extraParams=CryptoCompare&fsym=" + currency + "&limit=3&tryConversion=false&tsym=USD";
+var currencyCurrentURL = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,XRP,BCH,LTC&tsyms=USD";
 
 $.ajax({
   url: currencyCoinURL,
@@ -30,8 +31,13 @@ $.ajax({
   .then(function(response) {
     var twoDaysAgo = response.Data[0].close;
     var oneDayAgo = response.Data[1].close;
-    var current = response.Data[3].close;
-    console.log(response.Data);
+
+  $.ajax({
+  url: currencyCurrentURL,
+  method: "GET"
+  })
+  .then(function(response) {
+  var current = response[currency].USD;
 
 	var ctx = $("#myChart");
 	var myChart = new Chart(ctx, {
@@ -43,10 +49,10 @@ $.ajax({
       fill: false,
       data: [twoDaysAgo, oneDayAgo, current],
       backgroundColor: [
-        'rgba(54, 162, 235, 0.2)'
+        'rgba(255, 206, 86, 0.2)'
       ],
       borderColor: [
-        'rgba(54, 162, 235, 1)'
+        'rgba(255, 206, 86, 1)'
       ],
     }]
   },
@@ -60,5 +66,6 @@ $.ajax({
       }
     }
   });
+});
 });
 </script>
