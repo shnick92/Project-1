@@ -7,24 +7,23 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="chartBTC">
-	   <canvas id="myChart" width="400" height="400"></canvas>
+	<div id="chartETH">
+       <canvas id="myChart" width="400" height="400"></canvas>
     </div>
     <style>
-    #chartBTC {
+    #chartETH {
       width: 60%;
       height: 50%;
     } 
-    </style>
-	
+    </style>	
 </body>
 </html>
 <script>
 
-var bitCoinURL = "https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&extraParams=CryptoCompare&fsym=BTC&limit=3&tryConversion=false&tsym=USD"
+var EthCoinURL = "https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&extraParams=CryptoCompare&fsym=ETH&limit=3&tryConversion=false&tsym=USD"
 
 $.ajax({
-    url: bitCoinURL,
+    url: EthCoinURL,
     method: "GET"
     })
     .then(function(response) {
@@ -39,7 +38,7 @@ $.ajax({
     data: {
         labels: ["two days ago", "one days ago", "current price"],
         datasets: [{
-            label: "Price (USD) of one BitCoin", 
+            label: "Price (USD) of one ETH", 
             fill: false,
             data: [twoDaysAgo, oneDayAgo, current],
             backgroundColor: [
