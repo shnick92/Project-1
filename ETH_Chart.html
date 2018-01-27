@@ -5,6 +5,7 @@
 	<title>Document</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body>
 	<div id="chartETH">
@@ -29,8 +30,19 @@ $.ajax({
   method: "GET"
   })
   .then(function(response) {
-    var twoDaysAgo = response.Data[0].close;
-    var oneDayAgo = response.Data[1].close;
+    var oneDayAgoData = response.Data[3].close;
+    var twoDaysAgoData = response.Data[2].close;
+    var threeDaysAgoData = response.Data[1].close;
+    var fourDaysAgoData = response.Data[0].close
+
+    var yesterday = response.Data[3].time;
+    yesterday = moment(yesterday, "X").format("MMM D");
+    var twoDaysAgo = response.Data[2].time;
+    twoDaysAgo = moment(twoDaysAgo, "X").format("MMM D");
+    var threeDaysAgo = response.Data[1].time;
+    threeDaysAgo = moment(threeDaysAgo, "X").format("MMM D");
+    var fourDaysAgo = response.Data[0].time;
+    fourDaysAgo = moment(fourDaysAgo, "X").format("MMM D");
 
 $.ajax({
   url: currencyCurrentURL,
@@ -43,11 +55,12 @@ $.ajax({
 	var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ["two days ago", "one days ago", "current price"],
+      labels: [fourDaysAgo, threeDaysAgo, twoDaysAgo, yesterday, "current price"],
       datasets: [{
       label: "Price (USD) of one ETH", 
       fill: false,
-      data: [twoDaysAgo, oneDayAgo, current],
+      data: [fourDaysAgoData,threeDaysAgoData, 
+      twoDaysAgoData, oneDayAgoData, current],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)'
       ],
