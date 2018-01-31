@@ -45,14 +45,35 @@
   $(document).ready(function(){
     $("#chartBCH").hide()
     $("#ChartBTC").hide()
-        $("#BCHp").hover(function(){
-      $("#chartBCH").animate({
+    $("#ChartETH").hide()
+    $("#ChartLTC").hide()
+    $("#ChartXRP").hide()
+      $("#BCHp").hover(function(){
+        $("#chartBCH").animate({
         height: 'toggle'
       });
+    });
       $("#BTCp").hover(function(){
       $("#ChartBTC").animate({
         height: 'toggle'
       });
+    });
+      $("#ETHp").hover(function(){
+      $("#ChartETH").animate({
+        height: 'toggle'
+      });
+    });
+      $("#LTCp").hover(function(){
+      $("#ChartLTC").animate({
+        height: 'toggle'
+      });
+    });
+      $("#XRPp").hover(function(){
+      $("#ChartXRP").animate({
+        height: 'toggle'
+      });
+    });
+  });
 
 $("#chartBCH").on("click", function() {
   $("#chartBCH").animate({ height: "800px", width: "800px"});
@@ -60,10 +81,17 @@ $("#chartBCH").on("click", function() {
 $("#chartBTC").on("click", function() {
   $("#ChartBTC").animate({ height: "800px", width: "800px"});
   });
-
-    });
+$("#chartETH").on("click", function() {
+  $("#ChartETH").animate({ height: "800px", width: "800px"});
   });
-});
+$("#chartLTC").on("click", function() {
+  $("#ChartLTC").animate({ height: "800px", width: "800px"});
+  });
+$("#chartXRP").on("click", function() {
+  $("#ChartXRP").animate({ height: "800px", width: "800px"});
+  });
+
+
 
 var currency = ["BCH", "BTC", "ETH", "LTC", "XRP"];
 
