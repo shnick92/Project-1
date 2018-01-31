@@ -8,30 +8,35 @@
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body>
-  <p id="BCHp">BCH</p>
-	<div id="chartBCH">
-       <canvas id="myChartBCH" width="500" height="500"></canvas>
+  <div id="BCHp"><p>BCH</p>
+		<div id="chartBCH">
+       		<canvas id="myChartBCH" width="500" height="500"></canvas>
+    	</div>
+	</div>
+    <br><br><br>
+    <div id="BTCp"><p>BTC</p>
+    	<div id="ChartBTC">
+    		<canvas id="myChartBTC" width="500" height="500"></canvas>
+    	</div>
     </div>
     <br><br>
-    <p id="BTCp">BTC</p>
-    <div id="ChartBTC">
-    	<canvas id="myChartBTC" width="500" height="500"></canvas>
-    </div>
+    <div id="ETHp"><p>ETH</p>
+    	<div id="ChartETH">
+      		<canvas id="myChartETH" width="500" height="500"></canvas>
+    	</div>
+	</div>
     <br><br>
-    <p id="ETHp">ETH</p>
-    <div id="ChartETH">
-      <canvas id="myChartETH" width="500" height="500"></canvas>
-    </div>
-        <br><br>
-    <p id="LTCp">LTC</p>
-    <div id="ChartLTC">
-      <canvas id="myChartLTC" width="500" height="500"></canvas>
-    </div>
+    <div id="LTCp"><p>LTC</p>
+    	<div id="ChartLTC">
+      		<canvas id="myChartLTC" width="500" height="500"></canvas>
+    	</div>
+	</div>
     <br><br>
-    <p id="XRPp">XRP</p>
-    <div id="ChartXRP">
-      <canvas id="myChartXRP" width="500" height="500"></canvas>
-    </div>
+    <div id="XRPp"><p>XRP</p>
+    	<div id="ChartXRP">
+      		<canvas id="myChartXRP" width="500" height="500"></canvas>
+    	</div>
+	</div>
      <style>
     #chartBCH, #ChartBTC, #ChartETH, #ChartLTC, #ChartXRP {
       width: 50%;
@@ -74,24 +79,6 @@
       });
     });
   });
-
-$("#chartBCH").on("click", function() {
-  $("#chartBCH").animate({ height: "800px", width: "800px"});
-  });
-$("#chartBTC").on("click", function() {
-  $("#ChartBTC").animate({ height: "800px", width: "800px"});
-  });
-$("#chartETH").on("click", function() {
-  $("#ChartETH").animate({ height: "800px", width: "800px"});
-  });
-$("#chartLTC").on("click", function() {
-  $("#ChartLTC").animate({ height: "800px", width: "800px"});
-  });
-$("#chartXRP").on("click", function() {
-  $("#ChartXRP").animate({ height: "800px", width: "800px"});
-  });
-
-
 
 var currency = ["BCH", "BTC", "ETH", "LTC", "XRP"];
 
