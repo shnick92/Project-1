@@ -1,0 +1,37 @@
+
+.body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    line-height: 1.42857143;
+    margin: -200px;
+    background-color: whitesmoke;
+    
+}
+
+.logo {
+    font-family: 'Rammetto One', cursive;
+
+}
+
+.row {
+
+    margin: auto;
+}
+
+.lead {
+    font-family: 'Montserrat', sans-serif;
+
+}
+.homeandnews {
+    margin: 10px;
+}
+
+.banner {
+    width: 100%;
+    display: block;
+}
+
+.banner > .banner-image {
+    width: 100%;
+    display: block;
+}
