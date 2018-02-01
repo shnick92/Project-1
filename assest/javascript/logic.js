@@ -204,7 +204,8 @@ var newsURL = 'https://newsapi.org/v2/top-headlines?' +
 //       database.ref("current").push({
 //         guess: guess,
 //         price: response.USD,
-//         time: now
+//         time: now,
+//         currency: currency
 //       });
 //       };
 //     });
@@ -233,7 +234,7 @@ var newsURL = 'https://newsapi.org/v2/top-headlines?' +
 //     };
 // });
 
-// database.ref("current").on("child_added", function(snapshot) {
+// database.ref("current").orderByChild("time").limitToLast(3).on("child_added", function(snapshot) {
 //       // storing the snapshot.val() in a variable for convenience
 //       var sv = snapshot.val();
 
@@ -241,12 +242,14 @@ var newsURL = 'https://newsapi.org/v2/top-headlines?' +
 //       console.log(sv);
 
 //       // // Change the HTML to reflect
-//         $("#tracker").append("Guess: $" + sv.guess);
-//         $("#tracker").append("Current: $" + sv.price);
-//         $("#tracker").append(moment().format('MMMM Do YYYY, h:mm:ss a'));
+
+//         $("#tracker").append("<div>Guess: $" + sv.guess + "</div>");
+//         $("#tracker").append("<div>Current: $" + sv.price + "</div>");
+//         $("#tracker").append("<div>Currency: " + sv.currency + "</div>");
+//         $("#tracker").append("<div>" + moment().format('MMMM Do YYYY, h:mm:ss a') + "</div><br>");
 // });
 
-// database.ref("updated").on("child_added", function(snapshot) {
+// database.ref("updated").orderByChild("time2").limitToLast(3).on("child_added", function(snapshot) {
 //       // storing the snapshot.val() in a variable for convenience
 //         var sv = snapshot.val();
 
@@ -254,6 +257,6 @@ var newsURL = 'https://newsapi.org/v2/top-headlines?' +
 //       //console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
 
 //       // // Change the HTML to reflect
-//         $("#tracker").append("Current: $" + sv.price2);
-//         $("#tracker").append(moment().format('MMMM Do YYYY, h:mm:ss a'));
+//         $("#tracker").append("<div>Current: $" + sv.price2 + "</div>");
+//         $("#tracker").append("<div>" + moment().format('MMMM Do YYYY, h:mm:ss a') + "</div><br>");
 // });
