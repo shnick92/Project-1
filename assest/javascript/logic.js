@@ -211,7 +211,7 @@ var newsURL = 'https://newsapi.org/v2/top-headlines?' +
 //     });
 
 //     $(function(){
-//       setTimeout(timerFunction, 10000);
+//       setTimeout(timerFunction, 600000);
 //     });
 
 //     function timerFunction() {
