@@ -1,35 +1,41 @@
 
   $(document).ready(function(){
-    $("#chartBCH").hide()
     $("#ChartBTC").hide()
     $("#ChartETH").hide()
-    $("#ChartLTC").hide()
     $("#ChartXRP").hide()
-      $("#BCHp").hover(function(){
-        $("#chartBCH").animate({
+    $("#chartBCH").hide()
+    $("#ChartLTC").hide()
+
+    $("#BTCp").hover(function(){
+    $("#ChartBTC").animate({
         height: 'toggle'
       });
     });
-      $("#BTCp").hover(function(){
-      $("#ChartBTC").animate({
+
+    $("#ETHp").hover(function(){
+    $("#ChartETH").animate({
         height: 'toggle'
       });
     });
-      $("#ETHp").hover(function(){
-      $("#ChartETH").animate({
+
+    $("#XRPp").hover(function(){
+    $("#ChartXRP").animate({
         height: 'toggle'
       });
     });
+
+    $("#BCHp").hover(function(){
+    $("#chartBCH").animate({
+        height: 'toggle'
+      });
+    });
+
       $("#LTCp").hover(function(){
       $("#ChartLTC").animate({
         height: 'toggle'
       });
     });
-      $("#XRPp").hover(function(){
-      $("#ChartXRP").animate({
-        height: 'toggle'
-      });
-    });
+
   });
 
 var currency = ["BCH", "BTC", "ETH", "LTC", "XRP"];
