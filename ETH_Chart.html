@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+</head>
+<body>
+	<div id="chartETH">
+       <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+    <style>
+    #chartETH {
+      width: 60%;
+      height: 50%;
+    } 
+    </style>	
+</body>
+</html>
+<script>
+
+var currency = "ETH";
+var currencyCoinURL = "https://min-api.cryptocompare.com/data/histoday?aggregate=1&e=CCCAGG&extraParams=CryptoCompare&fsym=" + currency + "&limit=3&tryConversion=false&tsym=USD";
+var currencyCurrentURL = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,XRP,BCH,LTC&tsyms=USD";
+
+$.ajax({
+  url: currencyCoinURL,
+  method: "GET"
+  })
+  .then(function(response) {
+    var oneDayAgoData = response.Data[3].close;
+    var twoDaysAgoData = response.Data[2].close;
+    var threeDaysAgoData = response.Data[1].close;
+    var fourDaysAgoData = response.Data[0].close
+
+    var yesterday = response.Data[3].time;
+    yesterday = moment(yesterday, "X").format("MMM D");
+    var twoDaysAgo = response.Data[2].time;
+    twoDaysAgo = moment(twoDaysAgo, "X").format("MMM D");
+    var threeDaysAgo = response.Data[1].time;
+    threeDaysAgo = moment(threeDaysAgo, "X").format("MMM D");
+    var fourDaysAgo = response.Data[0].time;
+    fourDaysAgo = moment(fourDaysAgo, "X").format("MMM D");
+
+$.ajax({
+  url: currencyCurrentURL,
+  method: "GET"
+  })
+  .then(function(response) {
+  var current = response[currency].USD;
+
+	var ctx = $("#myChart");
+	var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [fourDaysAgo, threeDaysAgo, twoDaysAgo, yesterday, "current price"],
+      datasets: [{
+      label: "Price (USD) of one ETH", 
+      fill: false,
+      data: [fourDaysAgoData,threeDaysAgoData, 
+      twoDaysAgoData, oneDayAgoData, current],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255,99,132,1)'
+      ],
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero:true
+          }
+        }]
+      }
+    }
+  });
+});
+});
+</script>
