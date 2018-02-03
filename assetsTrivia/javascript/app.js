@@ -1,7 +1,7 @@
 $(document).ready(function() {
     
     function initialScreen() {
-        startScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Start Game</a></p>"
+        startScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Start Game</a></p>" 
         + "<img class='center-block img-start'width = '200' src='https://media.giphy.com/media/l3UcqjMBeQzXaoqGI/giphy.gif'>";
         
         $(".mainArea").html(startScreen);
@@ -36,7 +36,7 @@ function generateLossDueToTimeOut() {
     gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" 
     + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer is: " 
     + correctAnswers[questionCounter] + "</p>" 
-    + "<img class='center-block img-wrong'width = '300' src='https://media.giphy.com/media/3ornjXizVZDbngmjRK/giphy-downsized.gif'>";
+    + "<img class='center-block img-wrong'width = '370' src='https://media.giphy.com/media/3ornjXizVZDbngmjRK/giphy-downsized.gif'>";
     
     letsWait();  
     function letsWait() {
@@ -55,7 +55,7 @@ function generateWin() {
     letsWait();  
     function letsWait() {
         $(".mainArea").html(gameHTML);
-        setTimeout(wait, 3000);
+        setTimeout(wait, 5000);
     }
 }
 
@@ -64,7 +64,7 @@ function generateLoss() {
     gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" 
     + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "
     + correctAnswers[questionCounter] + "</p>" 
-    + "<img class='center-block img-wrong'width = '300' src='https://media.giphy.com/media/3o7btT1T9qpQZWhNlK/giphy-downsized.gif'>";
+    + "<img class='center-block img-wrong'width = '370' src='https://media.giphy.com/media/3o7btT1T9qpQZWhNlK/giphy-downsized.gif'>";
     
     letsWait(); 
     function letsWait() {
@@ -115,7 +115,7 @@ function finalScreen() {
     + correctTally + "</p>" + "<p>Wrong Answers: " 
     + incorrectTally + "</p>" + "<p>Unanswered: " 
     + unansweredTally + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='#' role='button'>Reset The Game!</a></p>";
-
+    
     $(".mainArea").html(gameHTML);
 }
 
@@ -150,17 +150,17 @@ var answerArray =   [["1 pound of heroin", "Ferrari", "2 pizzas", "Painting"],
 ["Hard but possible", "No", "Yes", "Only if it meets certain criteria"],
 ["Beijing", "New York","London","Vancouver"]];
 
-var imageArray =     ["<img class='center-block img-right' width = '300' src='https://media.giphy.com/media/10kxE34bJPaUO4/giphy-downsized.gif'>",
-"<img class='center-block img-right' width = '300' src='https://media.giphy.com/media/9M4m0A3rcE58s/giphy-downsized.gif'>",
-"<img class='center-block img-right' width = '300' src='https://media.giphy.com/media/ez1LtcbtTAV6U/giphy-downsized.gif'>",
-"<img class='center-block img-right' width = '300' src='https://media.giphy.com/media/ez1LtcbtTAV6U/giphy-downsized.gif'>",
-"<img class='center-block img-right'width = '300' src='https://media.giphy.com/media/ez1LtcbtTAV6U/giphy-downsized.gif'>",
-"<img class='center-block img-right'width = '300' src='https://media.giphy.com/media/ez1LtcbtTAV6U/giphy-downsized.gif'>",
-"<img class='center-block img-right'width = '300' src='https://media.giphy.com/media/ez1LtcbtTAV6U/giphy-downsized.gif'>",
-"<img class='center-block img-right'width = '300' src='https://media.giphy.com/media/ez1LtcbtTAV6U/giphy-downsized.gif'>"];
+var imageArray =     ["<img class='center-block img-right' width = '370' src='https://media.giphy.com/media/10kxE34bJPaUO4/giphy-downsized.gif'>",
+"<img class='center-block img-right' width = '370' src='https://media.giphy.com/media/9M4m0A3rcE58s/giphy-downsized.gif'>",
+"<img class='center-block img-right' width = '370' src='https://media.giphy.com/media/ez1LtcbtTAV6U/giphy-downsized.gif'>",
+"<img class='center-block img-right' width = '370' src='https://media.giphy.com/media/9M4m0A3rcE58s/giphy-downsized.gif'>",
+"<img class='center-block img-right'width = '370' src='https://media.giphy.com/media/9M4m0A3rcE58s/giphy-downsized.gif'>",
+"<img class='center-block img-right'width = '370' src='https://media.giphy.com/media/9M4m0A3rcE58s/giphy-downsized.gif'>",
+"<img class='center-block img-right'width = '370' src='https://media.giphy.com/media/9M4m0A3rcE58s/giphy-downsized.gif'>",
+"<img class='center-block img-right'width = '370' src='https://media.giphy.com/media/9M4m0A3rcE58s/giphy-downsized.gif'>"];
 
 var correctAnswers = ["C. 2 pizzas", "A. 10,000", "D. Satoshi Nakamoto", "C. 21 million",
-                      "D. Overstock", "A. Around 1500", "B. No", "D. Vancouver"];
+"D. Overstock", "A. Around 1500", "B. No", "D. Vancouver"];
 var questionCounter = 0;
 var selecterAnswer;
 var theClock;
