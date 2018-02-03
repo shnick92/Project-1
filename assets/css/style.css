@@ -1,6 +1,6 @@
 body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif";
-    font-size;14px;
+    font-family: "Helvetica Neue","Helvetica","Arial","sans-serif";
+    font-size: 14px;
     line-height:1.42857143;
     color: #333;
     background-color:whitesmoke;
@@ -14,10 +14,10 @@ body {
 
 
 .body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue","Helvetica","Arial","sans-serif";
     font-size: 20px;
     line-height: 1.42857143;
-    margin: -200px;
+/*    margin: -200px;*/
     background-color: whitesmoke;
     
 }
@@ -130,7 +130,7 @@ body {
     float:left;
   }
   .charts {
-    margin: 10px 0 20px 20px;
+    margin: 10px 0 0 40px;
     float:left;
   }
   .news {
@@ -153,14 +153,14 @@ body {
     color:rgb(75, 192, 192);
   }
   
-  /* #BTC, #ETH, #XRP, #BCH, #LTC {
-    margin: 16px 0; */
-  }
+/*   #BTC, #ETH, #XRP, #BCH, #LTC {
+    margin: 16px 0; 
+  }*/
   
   #ChartBTC, #ChartETH, #ChartXRP, #ChartBCH, #ChartLTC {
-    width: 250px;
-    height: 250px;
-    position:absolute;
+    width: 350px;
+    height: 350px;
+/*    position:absolute;*/
   } 
 
   
