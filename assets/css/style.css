@@ -70,6 +70,7 @@ body {
   
   .timer-p {
     margin-top: 40px;
+    color: white;
   }
 
   .text-center {
@@ -162,6 +163,11 @@ body {
     height: 350px;
 /*    position:absolute;*/
   } 
+
+  .featurette-heading {
+    font-size: 30px;
+    color: blue;
+  }
 
   
   
