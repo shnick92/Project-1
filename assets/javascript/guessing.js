@@ -1,5 +1,3 @@
-// guessing game (unfinished)
-
 var config = {
     apiKey: "AIzaSyByTyY0xDLiY4IM3j3mpLYh_XUVyKnSPy0",
     authDomain: "crypto-fun-1750c.firebaseapp.com",
@@ -30,7 +28,7 @@ $("#date").on("click", function (event) {
   var currency = $(".dropbtn").text();
   var currencyArray = [];
   var currentURL = "https://min-api.cryptocompare.com/data/price?fsym=" + currency + "&tsyms=USD";
-  var now = moment().format("X");
+  var now = moment().format('MMMM Do YYYY, h:mm:ss a');
 
   validateForm();
 
@@ -62,11 +60,11 @@ $("#date").on("click", function (event) {
     });
 
     $(function(){
-      setTimeout(timerFunction, 600000);
+      setTimeout(timerFunction, 10000);
     });
 
     function timerFunction() {
-      now = moment().format("X");
+      now = moment().format('MMMM Do YYYY, h:mm:ss a');
         $.ajax({
           url: currentURL,
           method: "GET"
@@ -97,7 +95,7 @@ database.ref("current").orderByChild("time").limitToLast(3).on("child_added", fu
         $("#tracker").append("<div>Guess: $" + sv.guess + "</div>");
         $("#tracker").append("<div>Current: $" + sv.price + "</div>");
         $("#tracker").append("<div>Currency: " + sv.currency + "</div>");
-        $("#tracker").append("<div>" + moment().format('MMMM Do YYYY, h:mm:ss a') + "</div><br>");
+        $("#tracker").append("<div>" + sv.time +  "</div><br>");
 });
 
 database.ref("updated").orderByChild("time2").limitToLast(3).on("child_added", function(snapshot) {
@@ -109,5 +107,5 @@ database.ref("updated").orderByChild("time2").limitToLast(3).on("child_added", f
 
       // // Change the HTML to reflect
         $("#tracker").append("<div>Current: $" + sv.price2 + "</div>");
-        $("#tracker").append("<div>" + moment().format('MMMM Do YYYY, h:mm:ss a') + "</div><br>");
+        $("#tracker").append("<div>" + sv.time2 + "</div><br>");
 });
