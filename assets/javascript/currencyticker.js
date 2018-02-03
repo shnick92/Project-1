@@ -2,7 +2,7 @@
 var currencyURL = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,XRP,BCH,LTC&tsyms=USD";
 
     $(function(){
-        setInterval(oneSecondFunction, 1);
+        setInterval(oneSecondFunction, 1000);
     });
 
     function oneSecondFunction() {

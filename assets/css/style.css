@@ -2,7 +2,6 @@
     font-family: "Helvetica Neue","Helvetica","Arial","sans-serif";
     font-size: 20px;
     line-height: 1.42857143;
-/*    margin: -200px;*/
     background-color: whitesmoke;
     
 }
@@ -96,10 +95,7 @@
     border-color: white;
 }
 
-/* .featurette-image {
-    opacity: 0.2;
-}
-  */
+
 .text-center2 {
     color: darkblue;
     font-weight: bold;
@@ -139,14 +135,10 @@
     color:rgb(75, 192, 192);
   }
   
-/*   #BTC, #ETH, #XRP, #BCH, #LTC {
-    margin: 16px 0; 
-  }*/
   
   #ChartBTC, #ChartETH, #ChartXRP, #ChartBCH, #ChartLTC {
     width: 350px;
     height: 350px;
-/*    position:absolute;*/
   } 
 
   .featurette-heading {
@@ -210,4 +202,16 @@ input {
 
 #date {
   background-color: gold;
+}
+
+#gif-form{
+  margin-top: 70px;
+}
+
+#result {
+  color:yellow;
+}
+
+label {
+  font-size:23px;
 }
