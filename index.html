@@ -112,6 +112,16 @@
             <span class="text-muted">Boom!</span>
         </h2>
         <p class="lead"> </p>
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-center">Trivia Bitcoin Game</h1>
+                    <div class="mainArea col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <div class="col-md-5">
         <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="https://qph.ec.quoracdn.net/main-qimg-b82a9226bafcfae825f289e966ed8918"
@@ -157,6 +167,35 @@
     <div class="col-md-7">
         <h2 class="featurette-heading">Bet your coins
             <span class="text-muted">boom.</span>
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-center">Guessing Game</h1>
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-11 col-md-offset-2">
+            <form id="gif-form" name="BettingForm">
+            <label for="investmentInput">How much?</label><br>
+            <input type="text" id="investmentInput" name="Guess">
+            <div class="dropdown">
+                <br>
+            <button onclick="myFunction()" class="dropbtn">Select Currency</button>
+            <div id="myDropdown" class="dropdown-content">
+                <br>
+        <a>BTC</a>
+        <a>ETH</a>
+        <a>XRP</a>
+        <a>BCH</a>
+        <a>LTC</a>
+      </div>
+</div>
+<br>
+     <input id="date" type="submit" value="Submit">
+</form>
+
+    <div id="tracker"></div>
+                </div>
+                </div>
+            </div>
+        </div>
         </h2>
         <p class="lead">Donec ullamcorper nulla non metus auctor fr</p>
     </div>
@@ -170,6 +209,7 @@
 </h2>
 <p class="lead"></p>
 </div>
+
 <div class="col-md-5">
 </div>
 </div>
@@ -281,6 +321,8 @@
 <script src="assets/javascript/AllCharts_With_Hover_JSFile.js"></script>
 <script src="assets/javascript/currencyticker.js"></script>
 <script src="assets/javascript/news.js"></script>
+<script src="assets/javascript/guessing.js"></script>
+<script src="assets/javascript/logic.js"></script>
 
 </body>
 </div>
