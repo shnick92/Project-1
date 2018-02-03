@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Crypto Crips</title>
+    <title>Dogecoin</title>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
@@ -9,85 +9,274 @@
     <!-- Latest compiled and minified Bootstrap CSS & JS Libraries -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
+    crossorigin="anonymous">
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
 </head>
 
 <body>
-
-        
+    
+    
 </br>
-    <div class="logo">
-        Dogecoin
+<div class="logo">
+    Dogecoin
+</div>
+</br>
+<div class="banner">
+    <img class="banner-image img-responsive" src="assets/images/dogiecoin.png">
+    
+</div>
+
+</br>
+
+<!-- charts, ticker, news  -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="symbols">
+                <div id="BTCp"><p>BTC</p></div>
+                <div id="ETHp"><p>ETH</p></div>
+                <div id="XRPp"><p>XRP</p></div>
+                <div id="BCHp"><p>BCH</p></div>
+                <div id="LTCp"><p>LTC</p></div>
+            </div>
+            <div class="ticker">
+                <div id="BTC"></div>
+                <div id="ETH"></div>
+                <div id="XRP"></div>
+                <div id="BCH"></div>
+                <div id="LTC"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            
+            <div class="charts">
+                <div id="ChartBTC">
+                    <canvas id="myChartBTC" width="250" height="250"></canvas>
+                </div>
+                <div id="ChartETH">
+                    <canvas id="myChartETH" width="250" height="250"></canvas>
+                </div>
+                <div id="ChartXRP">
+                    <canvas id="myChartXRP" width="250" height="250"></canvas>
+                </div>
+                <div id="ChartBCH">
+                    <canvas id="myChartBCH" width="250" height="250"></canvas>
+                </div>
+                <div id="ChartLTC">
+                    <canvas id="myChartLTC" width="250" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">News</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="news">
+                        <span id="lead"></span><br>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</br>
-    <div class="banner">
-    <img class="banner-image img-responsive" src="/Users/edgarcastellanos/Desktop/Crypto/Project-1/assets/images/dogiecoin.png">
-
 </div>
+</div>
+
+
+<!-- <div class="homeandnews">
+    <a href="index.html" class="btn btn-primary btn-lg active" role="button">Home</a>
+    <a href="news.html" class="btn btn-primary btn-lg active" role="button">More</a>
+</div> -->
+
+<hr class="featurette-divider">
+<div class="row featurette">
+    <div class="col-md-7">
+        <h2 class="featurette-heading">You missed out game
+            <span class="text-muted">Boom!</span>
+        </h2>
+        <p class="lead">Donec ullamcorper nulla non </p>
+    </div>
+    <div class="col-md-5">
+        <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="https://qph.ec.quoracdn.net/main-qimg-b82a9226bafcfae825f289e966ed8918"
+        data-holder-rendered="true">
+    </div>
+</div>
+
+<hr class="featurette-divider">
+
+
+<div class="row featurette">
+    <div class="col-md-7 col-md-push-5">
+        <h2 class="featurette-heading">Trivia Game
+            <span class="text-muted">Ready!?</span>
+        </h2>
+        <p class="lead">Donec ullamcorper.</p>
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-center">Trivia Bitcoin Game</h1>
+                    <div class="mainArea col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 col-md-pull-7">
+        <!-- <p class="text-center2">8. In 2016, someone accidentally sent $137,000 worth of Bitcoins instead of $5 with no way to get it back.<br><br>
+            9. University of Nicosia, Cyprus, was the first university to accept Bitcoins to pay for academic fees.<br><br>
+            10. Florida circuit court dismissed a money laundering case in 2016 saying Bitcoin is not money as per state regulations.<br><br>
+            11. The FBI has one of the world’s largest bitcoin wallets that consists of seized Bitcoins., a report from the Wired magazine claims that the FBI controls as much as $120 million.<br><br>
+            12. There are 1354 Bitcoin ATMs worldwide, in 55 countries by 21 ATM producers and 231 operators.<br><br>
+            13. Bitcoin network is much powerful than supercomputers. Bitcoin networks has a computing power of 2,046,364 Pflop/s. If you combine the computing power of the 500 most powerful supercomputers, you’ll get a combined fever of 274 Pflop/s.<br><br>
+            14. The amount of electricity running the Bitcoin Network could power 1.3 million homes.<br><br>
+        </p> -->
+        <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="https://www.infowizard.co/wp-content/uploads/2017/08/cryptocurrencies.png"
+        data-holder-rendered="true">
+    </div>
+</div>
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7">
+        <h2 class="featurette-heading">Bet your coins
+            <span class="text-muted">boom.</span>
+        </h2>
+        <p class="lead">Donec ullamcorper nulla non metus auctor fr</p>
+    </div>
+    <div class="col-md-5">
+        <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="https://steemit-production-imageproxy-upload.s3.amazonaws.com/DQmPXJQKuY6yYBTf37KJbiM2E1o8GazCtv9nqrKYgEme21X"
+        data-holder-rendered="true">
+    </div>
+</div>
+
+
+</h2>
+<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent
+    commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+</div>
+<div class="col-md-5">
+</div>
+</div>
+
+<hr class="featurette-divider">
+
+
+<div class="row featurette">
+    <div class="col-md-7 col-md-push-5">
+        <h2 class="featurette-heading">News
+            <span class="text-muted">Snap!</span>
+        </h2>
+        <style>
+            /* Force scrollbars onto browser window */
+            body {
+                margin-bottom: 200%;
+            }
+            
+            /* Box styles */
+            .myBox {
+                border: none;
+                padding: 5px;
+                font: 24px/36px sans-serif;
+                width: 800px;
+                height: 400px;
+                overflow: scroll;
+                background: lightyellow;
+            }
+            
+            /* Scrollbar styles */
+            ::-webkit-scrollbar {
+                width: 12px;
+                height: 12px;
+            }
+            
+            ::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 10px olivedrab;
+                border-radius: 10px;
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                border-radius: 10px;
+                background: yellowgreen; 
+                box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+            }
+            
+            ::-webkit-scrollbar-thumb:hover {
+                background: #7bac10;
+            }
+        </style>
         
+        
+        <div class="myBox">
+            1. No single entity or government has control over the Bitcoin currency.
+        </br>
+        2. Mining bitcoins is a term that actually means you’re using a computer program to solve mathematical problems to verify various transactions around the world.
+    </br>
+    4. Bitcoin creator is still a mystery figure. Satoshi Nakamoto is the name used by the person who designed bitcoin but there’s still doubt about the real identity.
 </br>
-                
+5. As of May 2017, Nakamoto is believed to own about 1 million bitcoins with a worth of more than $2 billion.69% of all banks in the world are experimenting with permissioned blockchains.
+</br>
+6. Only 807 people worldwide have ever declared Bitcoin income for tax purposes.
+</br>
+7. James Howell lost 7500 Bitcoins worth £4 million by throwing his hard drive which had his Bitcoin wallet.
+</br>
+8. In 2016, someone accidentally sent $137,000 worth of Bitcoins instead of $5 with no way to get it back.
+</br>
+9. University of Nicosia, Cyprus, was the first university to accept Bitcoins to pay for academic fees.
+</br>
+10. Florida circuit court dismissed a money laundering case in 2016 saying Bitcoin is not money as per state regulations.
+</br>
+11. The FBI has one of the world’s largest bitcoin wallets that consists of seized Bitcoins., a report from the Wired magazine claims that the FBI controls as much as $120 million.
+</br>
+12. There are 1354 Bitcoin ATMs worldwide, in 55 countries by 21 ATM producers and 231 operators.
+</br>
+13. Bitcoin network is much powerful than supercomputers. Bitcoin networks has a computing power of 2,046,364 Pflop/s. If you combine the computing power of the 500 most powerful supercomputers, you’ll get a combined fever of 274 Pflop/s.
+</br>
+14. The amount of electricity running the Bitcoin Network could power 1.3 million homes.
+</br>
+15. Economist Milton Friedman predicted Bitcoins 10 years before they were invented.
+</br>
+16. The Winklevoss twins (best known for their lawsuit against Mark Zuckerberg) own a 1% of all Bitcoins in      existence and started investing in them when they were only $9 per coin.
+</br>
+17. US Corporations are buying Bitcoin to quickly resolve Ransomware Attacks.
+</br>
+18. 90% of the Bitcoin addresses hold less than 0.7% (not even 1%) of all Bitcoins.
+</br>
+19. 2 Bitcoin addresses hold 1.65% of all Bitcoins, which are worth over $2 billion.
+</br>
+20. Of the total current Bitcoin supply of over 16 million coins, around 25% are totally lost for good and will never be used.
+</br>
+21. Some experts expect Bitcoin to reach $100,000 and even go beyond. Under such conditions, the total market cap of BTC will be measured in trillions.
 </div>
 
-<div class="homeandnews">
-        <a href="index.html" class="btn btn-primary btn-lg active" role="button">Home</a>
-        <a href="news.html" class="btn btn-primary btn-lg active" role="button">News</a>
+
+Add CommentCollapse 
+
+Message @Edgar Castellanos
+</div>
+<div class="col-md-5 col-md-pull-7">
+    <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="https://i1.wp.com/morganlinton.com/wp-content/uploads/2017/12/cryptocurrencies.png"
+    data-holder-rendered="true">
+</div>
 </div>
 
-        <hr class="featurette-divider">
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">You missed out game
-                    <span class="text-muted">Boom!</span>
-                </h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent
-                    commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="https://qph.ec.quoracdn.net/main-qimg-b82a9226bafcfae825f289e966ed8918"
-                    data-holder-rendered="true">
-            </div>
-        </div>
+<!-- Javascript -->
+<script src="assets/javascript/app.js"></script>
+<script src="assets/javascript/AllCharts_With_Hover_JSFile.js"></script>
+<script src="assets/javascript/currencyticker.js"></script>
+<script src="assets/javascript/news.js"></script>
 
-        <hr class="featurette-divider">
-
-
-        <div class="row featurette">
-            <div class="col-md-7 col-md-push-5">
-                <h2 class="featurette-heading">Trivia Game
-                    <span class="text-muted">Ready!?</span>
-                </h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent
-                    commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5 col-md-pull-7">
-                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="https://www.infowizard.co/wp-content/uploads/2017/08/cryptocurrencies.png"
-                    data-holder-rendered="true">
-            </div>
-        </div>
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">Bet your coins
-                    <span class="text-muted">boom.</span>
-                </h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent
-                    commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5">
-                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="500x500" src="https://steemit-production-imageproxy-upload.s3.amazonaws.com/DQmPXJQKuY6yYBTf37KJbiM2E1o8GazCtv9nqrKYgEme21X"
-                    data-holder-rendered="true">
-            </div>
-        </div>
-
-        <!-- Javascript -->
-        <script src="assets/javascript/app.js"></script>
-    </body>
+</body>
 </div>
-    </html>
+</html>
+

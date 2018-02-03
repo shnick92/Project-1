@@ -1,3 +1,17 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif";
+    font-size;14px;
+    line-height:1.42857143;
+    color: #333;
+    background-color:whitesmoke;
+}
+.jumbotron {
+    padding-top:30px;
+    padding-bottom: 30px;
+    margin-bottom: 60px;
+    background-color: rgb(117, 117, 38);
+}
+
 
 .body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -35,3 +49,120 @@
     width: 100%;
     display: block;
 }
+
+
+/* Ivo */
+
+.jumbotron {
+    box-sizing: border-box;
+    height: 600px;
+    background-color: rgb(46, 46, 46);
+    color: white;
+    background-image: url(../images/spiration-dark.png);
+  }
+
+  .main-button-container {
+    margin-top: 175px;
+    max-width: 610px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .timer-p {
+    margin-top: 40px;
+  }
+
+  .text-center {
+      color: gold;
+  }
+  
+  .answer:hover {
+    background:gold;
+  }
+  
+  .answer {
+    padding-top: 7px;
+    height: 45px;
+    color: black;
+    padding-left: 14px;
+    background-color: white;
+    border-radius: 4px;
+  }
+  
+  .img-wrong {
+    margin-top: 40px;
+  }
+  
+  .first-answer {
+    margin-top: 40px;
+  }
+  
+  .reset-button {
+    margin-top: 40px;
+  }
+  
+  .summary-correct {
+    margin-top: 40px;
+  }
+ .btn-primary {
+    background-color: gold;
+    color: black;
+    border-color: white;
+}
+
+/* .featurette-image {
+    opacity: 0.2;
+}
+  */
+.text-center2 {
+    color: darkblue;
+    font-weight: bold;
+    background-image: src="https://www.infowizard.co/wp-content/uploads/2017/08/cryptocurrencies.png";
+                
+}
+/* charts tickers and news */
+.ticker {
+    float:left;
+    margin-left: 10px;
+    margin-bottom: 40px;
+  }
+  .symbols {
+    float:left;
+  }
+  .charts {
+    margin: 10px 0 20px 20px;
+    float:left;
+  }
+  .news {
+    float:right;
+  }
+  
+  #BTCp:hover{
+    color: rgb(54, 162, 235);
+  }
+  #ETHp:hover{
+    color: rgb(255, 99, 132);
+  }
+  #XRPp:hover{
+    color: rgb(255, 206, 86);
+  }
+  #BCHp:hover{
+    color:rgb(153, 102, 255);
+  }
+  #LTCp:hover{
+    color:rgb(75, 192, 192);
+  }
+  
+  /* #BTC, #ETH, #XRP, #BCH, #LTC {
+    margin: 16px 0; */
+  }
+  
+  #ChartBTC, #ChartETH, #ChartXRP, #ChartBCH, #ChartLTC {
+    width: 250px;
+    height: 250px;
+    position:absolute;
+  } 
+
+  
+  
+  
